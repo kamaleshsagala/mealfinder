@@ -1,0 +1,653 @@
+/* 
+ * Style Sheet for Meal Finder Website
+ * Color Palette: Primary Orange (#F57C00), White (#FFFFFF), Light BG (#F5F5F5), Dark Text (#333333)
+ * Typography: Poppins
+ */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Custom CSS Variables */
+:root {
+    --primary-orange: #F57C00;
+    --primary-orange-hover: #E65100;
+    --white: #FFFFFF;
+    --bg-light: #F5F5F5;
+    --text-dark: #333333;
+    --text-muted: #757575;
+    --text-light: #EEEEEE;
+    --footer-bg: #212121;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-pill: 20px;
+    --transition: all 0.3s ease;
+}
+
+/* Core Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sticky Navbar Styles */
+.navbar {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--white);
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 450px;
+    background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    width: 100%;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Centered Search Box */
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    outline: none;
+}
+
+.search-form button {
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    padding: 0 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-form button:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+/* Sections Configuration */
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: var(--text-dark);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-orange);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Category Cards */
+.category-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.category-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: var(--text-light);
+}
+
+.category-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.category-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.category-link {
+    display: inline-block;
+    align-self: flex-start;
+    color: var(--primary-orange);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.category-link:hover {
+    color: var(--primary-orange-hover);
+}
+
+/* Meal Cards */
+.meal-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.meal-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.meal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meal-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.meal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.meal-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.meal-btn {
+    margin-top: auto;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    text-align: center;
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.meal-btn:hover {
+    background-color: var(--primary-orange-hover);
+}
+
+/* Category Details Banner */
+.category-header {
+    background-color: var(--white);
+    padding: 40px 0;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 40px;
+}
+
+.category-header-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.category-header-img {
+    width: 250px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.category-header-info {
+    flex: 1;
+}
+
+.category-header-title {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.category-header-desc {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.7;
+}
+
+/* Meal Details Page Layout */
+.meal-detail-section {
+    padding: 40px 0 60px;
+}
+
+.meal-header {
+    margin-bottom: 30px;
+}
+
+.meal-header-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.meal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.meal-meta-item {
+    background-color: var(--text-light);
+    color: #555555;
+    padding: 5px 15px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.meal-meta-item.category-tag {
+    background-color: rgba(245, 124, 0, 0.1);
+    color: var(--primary-orange);
+}
+
+.meal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.meal-media {
+    width: 100%;
+}
+
+.meal-detail-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.meal-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.meal-content-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--primary-orange);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Ingredients Table / List */
+.ingredients-list {
+    margin-bottom: 30px;
+}
+
+.ingredient-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--text-light);
+}
+
+.ingredient-row:last-child {
+    border-bottom: none;
+}
+
+.ingredient-name {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.ingredient-measure {
+    color: var(--text-muted);
+}
+
+/* Instructions */
+.instructions-box {
+    margin-top: 30px;
+}
+
+.instructions-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555555;
+    white-space: pre-line;
+}
+
+/* Actions buttons */
+.meal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.btn-youtube {
+    background-color: #FF0000;
+    color: var(--white);
+}
+
+.btn-youtube:hover {
+    background-color: #D00000;
+}
+
+.btn-source {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+.btn-source:hover {
+    background-color: #222222;
+}
+
+/* Spinner Loader */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    width: 100%;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #E0E0E0;
+    border-top: 5px solid var(--primary-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error/Message state styles */
+.message-box {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.message-box.error {
+    border-left: 5px solid #D32F2F;
+}
+
+.message-box h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    color: var(--text-muted);
+}
+
+/* Back Button */
+.back-btn-container {
+    padding: 20px 0 0;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-orange);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+.back-btn svg {
+    margin-right: 8px;
+    fill: currentColor;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg);
+    color: var(--white);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: var(--white);
+    opacity: 0.6;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--primary-orange);
+}
+
+/* Style verified */
+
+/* css grid containers updated */

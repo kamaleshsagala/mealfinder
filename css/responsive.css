@@ -1,0 +1,190 @@
+/* 
+ * Responsive Design Media Queries for Meal Finder Website
+ * Pure CSS Media Queries (Mobile, Tablet, Laptop, Desktop)
+ */
+
+/* ==========================================================================
+   Desktop / Large Viewports (Already default styles, fine-tuning transitions)
+   ========================================================================== */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+}
+
+/* ==========================================================================
+   Laptop / Medium-Large Viewports (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .meal-grid {
+        gap: 30px;
+    }
+}
+
+/* ==========================================================================
+   Tablet / Medium Viewports (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+
+    .search-form input[type="text"] {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .search-form button {
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+
+    /* Category Header responsive */
+    .category-header-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .category-header-img {
+        width: 200px;
+    }
+
+    .category-header-title {
+        font-size: 1.8rem;
+    }
+
+    /* Meal details layout changes to single column */
+    .meal-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .meal-detail-img {
+        max-height: 350px;
+        width: 100%;
+    }
+
+    .meal-header-title {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   Mobile / Small Viewports (max-width: 576px)
+   ========================================================================== */
+@media (max-width: 576px) {
+    .navbar .container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-links {
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 0.85rem;
+        display: none; /* Hide description on mobile to save vertical space */
+    }
+
+    .search-form {
+        flex-direction: column;
+        box-shadow: none;
+        border-radius: 6px;
+        background-color: transparent;
+        gap: 10px;
+    }
+
+    .search-form input[type="text"] {
+        border-radius: 4px;
+        width: 100%;
+        border: 1px solid #E0E0E0;
+    }
+
+    .search-form button {
+        border-radius: 4px;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Single column layout for mobile cards */
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .meal-header-title {
+        font-size: 1.6rem;
+    }
+
+    .meal-content {
+        padding: 20px;
+    }
+
+    .meal-actions {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        width: 100%;
+    }
+}

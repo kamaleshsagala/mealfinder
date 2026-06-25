@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse delicious recipes under your favorite food category. Detail lists and guides.">
+    <title>Category Meals | Meal Finder</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar" id="main-navbar">
+        <div class="container">
+            <a href="index.html" class="logo" id="nav-logo">Meal<span>Finder</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" id="nav-home-link">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        <!-- Back Button -->
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Category Details Header Box -->
+        <section class="category-header" id="category-header-section" style="display: none;">
+            <div class="category-header-content">
+                <img class="category-header-img" id="category-img" src="" alt="Category Image">
+                <div class="category-header-info">
+                    <h1 class="category-header-title" id="category-title-heading">Category</h1>
+                    <p class="category-header-desc" id="category-description-text">Loading category details...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meals Section -->
+        <section class="section" id="category-meals-section">
+            <h2 class="section-title" id="meals-title-heading">Meals</h2>
+            <div id="meals-loading-container">
+                <!-- Loader placeholder -->
+            </div>
+            <div class="grid" id="category-meals-grid">
+                <!-- Dynamically populated meal cards -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Meal Finder. All rights reserved.</p>
+            <p>Powered by TheMealDB API. Made with pure HTML, CSS, and Vanilla JavaScript.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- JavaScript Execution -->
+    <script type="module" src="js/category.js"></script>
+</body>
+</html>

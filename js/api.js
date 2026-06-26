@@ -64,3 +64,5 @@ export async function getMealsByCategory(categoryName) {
 // Code verified
 
 // api error boundaries checked
+
+// api error boundaries checked

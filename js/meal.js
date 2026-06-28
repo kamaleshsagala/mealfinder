@@ -156,3 +156,5 @@ document.addEventListener('DOMContentLoaded', loadMealDetails);
 // Code verified
 
 // meal ingredients parsing checked
+
+// meal ingredients parsing checked

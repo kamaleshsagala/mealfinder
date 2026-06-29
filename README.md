@@ -91,3 +91,5 @@ MealFinder/
 <!-- Readme verified -->
 
 <!-- live server setup guide completed -->
+
+<!-- live server setup guide completed -->
